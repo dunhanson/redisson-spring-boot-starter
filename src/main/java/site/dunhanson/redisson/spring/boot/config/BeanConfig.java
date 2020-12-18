@@ -18,6 +18,10 @@ public class BeanConfig {
     @Resource
     private RedissonConfig redissonConfig;
 
+    /**
+     * RedissonClient初始化
+     * @return
+     */
     @Bean
     public RedissonClient redissonClient() {
         Config config = RedissonUtils.createConfig(redissonConfig);
