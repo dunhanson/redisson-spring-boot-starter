@@ -1,6 +1,10 @@
 # redisson-spring-boot-starter
 
+redisson spring boot 项目开箱即用
+
 ## 配置方式
+
+使用application.yml配置
 
 单节点模式
 
@@ -28,8 +32,46 @@ redisson:
   transportMode: "NIO"
 ```
 
-哨兵模式
+## 使用方法
+
+```java
+@Slf4j
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class RedissonSpringBootStarterApplicationTests {
+    @Resource
+    private RedissonClient redissonClient;
+
+    @Test
+    public void start() {
+        RLock lock = redissonClient.getLock("test");
+        try {
+            // 等待时间
+            long waitTime = 3;
+            // 锁有效时间
+            long leaseTime = 10;
+            // 获取锁
+            boolean tryLock = lock.tryLock(waitTime, leaseTime, TimeUnit.SECONDS);
+            log.info("tryLock:{}", tryLock);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            if(lock.isLocked()) {
+                lock.unlock();
+            }
+        }
+    }
+}
+```
+
+## 开发计划
+
+功能模块开发情况
+
+* ~~singleServerConfig~~ 已完成
+* sentinelServersConfig 进行中
 
 
 ## 参考资料
 [Redisson实现分布式锁(2)—RedissonLock](https://www.cnblogs.com/qdhxhz/p/11055426.html)
+
