@@ -1,6 +1,10 @@
 # redisson-spring-boot-starter
 
-redisson spring boot 项目开箱即用
+基于redisson原生配置，减少学习成本
+
+在spring boot项目中redisson开箱即用
+
+使用redisson就这么简单
 
 ## 配置方式
 
