@@ -71,7 +71,11 @@ public class RedissonSpringBootStarterApplicationTests {
 * ~~singleServerConfig~~ 已完成
 * sentinelServersConfig 进行中
 
-
 ## 参考资料
+
+[GitHub Redisson](https://github.com/redisson/redisson)
+
+[GitHub Redisson Wiki](https://github.com/redisson/redisson/wiki)
+
 [Redisson实现分布式锁(2)—RedissonLock](https://www.cnblogs.com/qdhxhz/p/11055426.html)
 
