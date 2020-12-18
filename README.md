@@ -12,6 +12,17 @@
 
 单节点模式
 
+基础配置
+
+```yaml
+redisson:
+  singleServerConfig:
+    password: null
+    address: "redis://127.0.0.1:6379"
+```
+
+完整配置
+
 ```yaml
 redisson:
   singleServerConfig:
