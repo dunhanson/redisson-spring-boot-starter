@@ -1,47 +1,34 @@
 # redisson-spring-boot-starter
 
-配置方式
+## 配置方式
 
-1、默认配置
-
-读取spring.redis
-
-1.1 单节点模式
+单节点模式
 
 ```yaml
-redis:
-  host: 127.0.0.1
-  password:
-```
-1.2 集群哨兵模式
-
-```yaml
-redis:
-  sentinel:
-    master: mymaster
-    nodes: 192.168.2.170:26377,192.168.2.170:26378,192.168.2.170:26379
-  password: bxkc2016
-```
-
-2、专属配置
-
-2.1 单节点模式
-
-```yaml
-dunhanson:
-  redisson:
-    single:
-      ...
+redisson:
+  singleServerConfig:
+    idleConnectionTimeout: 10000
+    connectTimeout: 10000
+    timeout: 3000
+    retryAttempts: 3
+    retryInterval: 1500
+    password: null
+    subscriptionsPerConnection: 5
+    clientName: null
+    address: "redis://127.0.0.1:6379"
+    subscriptionConnectionMinimumIdleSize: 1
+    subscriptionConnectionPoolSize: 50
+    connectionMinimumIdleSize: 24
+    connectionPoolSize: 64
+    database: 0
+    dnsMonitoringInterval: 5000
+  threads: 16
+  nettyThreads: 32
+  # codec: !<org.redisson.codec.FstCodec> {}
+  transportMode: "NIO"
 ```
 
-2.2 集群哨兵模式
-
-```yaml
-dunhanson:
-  redisson:
-    sentinel:
-      ...
-```
+哨兵模式
 
 
 ## 参考资料

@@ -5,7 +5,6 @@ import org.redisson.config.Config;
 import org.redisson.config.SingleServerConfig;
 import site.dunhanson.redisson.spring.boot.config.RedissonConfig;
 import site.dunhanson.redisson.spring.boot.config.SingleConfig;
-import site.dunhanson.redisson.spring.boot.constant.RedissonConstant;
 
 /**
  * redisson工具类
@@ -20,10 +19,10 @@ public class RedissonUtils {
      * @return
      */
     public static Config createConfig(RedissonConfig redissonConfig) {
-        String mode = redissonConfig.getMode();
         Config config = new Config();
-        if(RedissonConstant.MODE_SINGLE.equals(mode)) {
-            initSingleServerConfig(config, redissonConfig.getSingleConfig());
+        SingleConfig singleServerConfig = redissonConfig.getSingleServerConfig();
+        if(singleServerConfig != null) {
+            initSingleServerConfig(config, redissonConfig.getSingleServerConfig());
         }
         return config;
     }

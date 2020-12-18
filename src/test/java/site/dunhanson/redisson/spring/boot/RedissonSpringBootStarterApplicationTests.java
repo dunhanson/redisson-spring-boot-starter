@@ -26,7 +26,7 @@ public class RedissonSpringBootStarterApplicationTests {
             // 锁有效时间
             long leaseTime = 10;
             // 获取锁
-            boolean tryLock = lock.tryLock(3, 10, TimeUnit.SECONDS);
+            boolean tryLock = lock.tryLock(waitTime, leaseTime, TimeUnit.SECONDS);
             log.info("tryLock:{}", tryLock);
         } catch (InterruptedException e) {
             e.printStackTrace();

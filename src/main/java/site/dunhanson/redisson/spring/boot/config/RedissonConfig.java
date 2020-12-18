@@ -9,10 +9,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @author dunhanson
  */
 @Data
-@ConfigurationProperties(prefix = "dunhanson.redisson")
+@ConfigurationProperties(prefix = "redisson")
 public class RedissonConfig {
-    private String mode = "single";
-    private SingleConfig singleConfig;
+    private SingleConfig singleServerConfig;
     private Integer threads;
     private Integer nettyThreads;
     private String codec;
