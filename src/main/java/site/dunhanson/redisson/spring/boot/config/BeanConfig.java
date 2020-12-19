@@ -16,7 +16,7 @@ import site.dunhanson.redisson.spring.boot.utils.RedissonUtils;
  * @author dunhanson
  */
 @Configuration
-@EnableConfigurationProperties(value = {RedissonConfig.class})
+@EnableConfigurationProperties(value = {RedissonConfig.class, SingleConfig.class})
 public class BeanConfig {
     @Resource
     private RedissonConfig redissonConfig;
@@ -26,7 +26,6 @@ public class BeanConfig {
      * @return
      */
     @Bean
-    @ConditionalOnClass(RedissonConfig.class)
     public RedissonClient redissonClient() {
         Config config = RedissonUtils.createConfig(redissonConfig);
         return Redisson.create(config);

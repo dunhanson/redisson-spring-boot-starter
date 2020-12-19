@@ -1,6 +1,8 @@
 package site.dunhanson.redisson.spring.boot.config;
 
 import lombok.Data;
+import org.redisson.client.codec.Codec;
+import org.redisson.config.TransportMode;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
@@ -14,6 +16,6 @@ public class RedissonConfig {
     private SingleConfig singleServerConfig;
     private Integer threads;
     private Integer nettyThreads;
-    private String codec;
-    private String transportMode;
+    private Codec codec;
+    private TransportMode transportMode;
 }

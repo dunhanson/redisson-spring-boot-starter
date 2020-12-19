@@ -16,7 +16,6 @@ import java.util.concurrent.TimeUnit;
 public class RedissonSpringBootStarterApplicationTests {
     @Resource
     private RedissonClient redissonClient;
-
     @Test
     public void start() {
         RLock lock = redissonClient.getLock("test");

@@ -1,6 +1,7 @@
 package site.dunhanson.redisson.spring.boot.config;
 
 import lombok.Data;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
  * 单节点配置
@@ -8,6 +9,7 @@ import lombok.Data;
  * @author dunhanson
  */
 @Data
+@ConfigurationProperties(prefix = "redisson.single-server-config")
 public class SingleConfig {
     /**
      * 连接空闲超时，单位：毫秒

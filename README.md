@@ -25,26 +25,25 @@ redisson:
 
 ```yaml
 redisson:
-  singleServerConfig:
-    idleConnectionTimeout: 10000
-    connectTimeout: 10000
+  single_server_config:
+    idle_connection_timeout: 10000
+    connect_timeout: 10000
     timeout: 3000
-    retryAttempts: 3
-    retryInterval: 1500
+    retry_attempts: 3
+    retry_interval: 1500
     password: null
-    subscriptionsPerConnection: 5
-    clientName: null
+    subscriptions_per_connection: 5
+    client_name: null
     address: "redis://127.0.0.1:6379"
-    subscriptionConnectionMinimumIdleSize: 1
-    subscriptionConnectionPoolSize: 50
-    connectionMinimumIdleSize: 24
-    connectionPoolSize: 64
+    subscription_connection_minimum_idle_size: 1
+    subscription_connection_pool_size: 50
+    connection_minimum_idle_size: 24
+    connection_pool_size: 64
     database: 0
-    dnsMonitoringInterval: 5000
+    dns_monitoring_interval: 5000
   threads: 16
-  nettyThreads: 32
-  # codec: !<org.redisson.codec.FstCodec> {}
-  transportMode: "NIO"
+  netty_threads: 32
+  transport_mode: "NIO"
 ```
 
 ## 使用方法

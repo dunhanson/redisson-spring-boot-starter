@@ -1,10 +1,13 @@
 package site.dunhanson.redisson.spring.boot.utils;
 
 import org.apache.commons.lang3.StringUtils;
+import org.redisson.client.codec.Codec;
 import org.redisson.config.Config;
 import org.redisson.config.SingleServerConfig;
+import org.redisson.config.TransportMode;
 import site.dunhanson.redisson.spring.boot.config.RedissonConfig;
 import site.dunhanson.redisson.spring.boot.config.SingleConfig;
+import site.dunhanson.redisson.spring.boot.constant.RedissonConstant;
 
 /**
  * redisson工具类
@@ -20,20 +23,48 @@ public class RedissonUtils {
      */
     public static Config createConfig(RedissonConfig redissonConfig) {
         Config config = new Config();
-        SingleConfig singleServerConfig = redissonConfig.getSingleServerConfig();
-        if(singleServerConfig != null) {
-            initSingleServerConfig(config, redissonConfig.getSingleServerConfig());
+        initConfig(config, redissonConfig);
+        if(redissonConfig.getSingleServerConfig() != null) {
+            initSingleServerConfig(config.useSingleServer(), redissonConfig.getSingleServerConfig());
+        } else {
+            config.useSingleServer().setAddress(RedissonConstant.DEFAULT_ADDRESS);
         }
         return config;
     }
 
     /**
+     * 初始化Config
+     * @param config
+     * @param redissonConfig
+     */
+    public static void initConfig(Config config, RedissonConfig redissonConfig) {
+        Integer threads = redissonConfig.getThreads();
+        // threads（线程池数量）
+        if(threads != null) {
+            config.setThreads(threads);
+        }
+        // nettyThreads （Netty线程池数量）
+        Integer nettyThreads = redissonConfig.getNettyThreads();
+        if(nettyThreads != null) {
+            config.setNettyThreads(nettyThreads);
+        }
+        // nettyThreads （Netty线程池数量）
+        TransportMode transportMode = redissonConfig.getTransportMode();
+        if(transportMode != null) {
+            config.setTransportMode(transportMode);
+        }
+        Codec codec = redissonConfig.getCodec();
+        if(codec != null) {
+            config.setCodec(codec);
+        }
+    }
+
+    /**
      * 初始化单节点服务
-     * @param config Config
+     * @param serverConfig SingleServerConfig
      * @param singleConfig 单节点配置
      */
-    public static void initSingleServerConfig(Config config, SingleConfig singleConfig) {
-        SingleServerConfig serverConfig = config.useSingleServer();
+    public static void initSingleServerConfig(SingleServerConfig serverConfig, SingleConfig singleConfig) {
         // idleConnectionTimeout（连接空闲超时，单位：毫秒）
         Integer idleConnectionTimeout = singleConfig.getIdleConnectionTimeout();
         if(idleConnectionTimeout != null) {
