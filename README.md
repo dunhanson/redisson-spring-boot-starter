@@ -135,7 +135,7 @@ transport_mode: "NIO"
 功能模块开发情况
 
 * ~~single_server_config~~ 已完成
-* ~~sentinel_servers_config~~ 进行中
+* ~~sentinel_servers_config~~ 已完成
 
 ## 参考资料
 
