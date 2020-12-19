@@ -142,5 +142,3 @@ transport_mode: "NIO"
 
 [GitHub Redisson Wiki](https://github.com/redisson/redisson/wiki)
 
-[Redisson实现分布式锁(2)—RedissonLock](https://www.cnblogs.com/qdhxhz/p/11055426.html)
-
