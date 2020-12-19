@@ -2,9 +2,7 @@
 
 基于redisson原生配置，减少学习成本
 
-在spring boot项目中redisson开箱即用
-
-使用redisson就这么简单
+spring boot中开箱即用redisson
 
 ## 使用方法
 
@@ -122,8 +120,9 @@ sentinel_servers_config:
   read_mode: "SLAVE"
   subscription_mode: "SLAVE"
   sentinel_addresses:
-    - "redis://127.0.0.1:26379"
-    - "redis://127.0.0.1:26389"
+    - "redis://192.168.2.170:26377"
+    - "redis://192.168.2.170:26378"
+    - "redis://192.168.2.170:26379"
   master_name: "mymaster"
   database: 0
 threads: 16
@@ -136,7 +135,7 @@ transport_mode: "NIO"
 功能模块开发情况
 
 * ~~single_server_config~~ 已完成
-* sentinel_servers_config 进行中
+* ~~sentinel_servers_config~~ 进行中
 
 ## 参考资料
 
