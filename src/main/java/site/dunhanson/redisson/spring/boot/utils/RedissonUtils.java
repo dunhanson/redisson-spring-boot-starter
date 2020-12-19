@@ -24,10 +24,10 @@ public class RedissonUtils {
     public static Config createConfig(RedissonConfig redissonConfig) {
         Config config = new Config();
         initConfig(config, redissonConfig);
-        if(redissonConfig.getSentinelConfig() != null) {
+        if(redissonConfig.getSentinelServersConfig() != null) {
             // 哨兵模式
             SentinelServersConfig sentinelServersConfig = config.useSentinelServers();
-            SentinelConfig sentinelConfig = redissonConfig.getSentinelConfig();
+            SentinelConfig sentinelConfig = redissonConfig.getSentinelServersConfig();
             initSentinelServerConfig(sentinelServersConfig, sentinelConfig);
             initBasicConfig(sentinelServersConfig, sentinelConfig);
         } else if(redissonConfig.getSingleServerConfig() != null) {

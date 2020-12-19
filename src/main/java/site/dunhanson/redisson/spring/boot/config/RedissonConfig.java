@@ -14,7 +14,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "redisson")
 public class RedissonConfig {
     private SingleConfig singleServerConfig;
-    private SentinelConfig sentinelConfig;
+    private SentinelConfig sentinelServersConfig;
     private Integer threads;
     private Integer nettyThreads;
     private Codec codec;

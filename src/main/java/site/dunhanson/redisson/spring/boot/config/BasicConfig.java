@@ -49,8 +49,4 @@ public class BasicConfig {
      * 发布和订阅连接池大小
      */
     protected Integer subscriptionConnectionPoolSize;
-    /**
-     * DNS监控间隔，单位：毫秒
-     */
-    protected Long dnsMonitoringInterval;
 }

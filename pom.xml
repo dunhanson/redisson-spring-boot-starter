@@ -10,7 +10,7 @@
     </parent>
     <groupId>site.dunhanson</groupId>
     <artifactId>redisson-spring-boot-starter</artifactId>
-    <version>0.0.15</version>
+    <version>0.0.16</version>
     <name>redisson-spring-boot-starter</name>
     <description>Redisson project for Spring Boot</description>
 

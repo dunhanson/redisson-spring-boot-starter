@@ -1,0 +1,8 @@
+redisson:
+  sentinel-servers-config:
+    master-name: "mymaster"
+    sentinel-address:
+      - "redis://192.168.2.170:26377"
+      - "redis://192.168.2.170:26378"
+      - "redis://192.168.2.170:26379"
+    password: bxkc2016

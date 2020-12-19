@@ -89,12 +89,14 @@ redisson:
 基础
 
 ```yaml
-sentinelServersConfig:
-  password: null
-  sentinel_addresses:
-    - "redis://127.0.0.1:26379"
-    - "redis://127.0.0.1:26389"
-  masterName: "mymaster"
+redisson:
+  sentinel-servers-config:
+    master-name: "mymaster"
+    sentinel-address:
+      - "redis://192.168.2.170:26377"
+      - "redis://192.168.2.170:26378"
+      - "redis://192.168.2.170:26379"
+    password: bxkc2016
 ```
 
 完整
