@@ -16,7 +16,7 @@
 
 ```yaml
 redisson:
-  singleServerConfig:
+  single_server_config:
     password: null
     address: "redis://127.0.0.1:6379"
 ```
@@ -82,8 +82,8 @@ public class RedissonSpringBootStarterApplicationTests {
 
 功能模块开发情况
 
-* ~~singleServerConfig~~ 已完成
-* sentinelServersConfig 进行中
+* ~~single_server_config~~ 已完成
+* sentinel_servers_config 进行中
 
 ## 参考资料
 
