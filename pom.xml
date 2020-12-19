@@ -10,7 +10,7 @@
     </parent>
     <groupId>site.dunhanson</groupId>
     <artifactId>redisson-spring-boot-starter</artifactId>
-    <version>0.0.16</version>
+    <version>0.0.21</version>
     <name>redisson-spring-boot-starter</name>
     <description>Redisson project for Spring Boot</description>
 
@@ -75,5 +75,14 @@
                 </configuration>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>*.yml</exclude>
+                </excludes>
+            </resource>
+        </resources>
     </build>
 </project>

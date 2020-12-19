@@ -7,10 +7,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import javax.annotation.Resource;
-
-import site.dunhanson.redisson.spring.boot.config.RedissonConfig;
-import site.dunhanson.redisson.spring.boot.config.SentinelConfig;
-import site.dunhanson.redisson.spring.boot.config.SingleConfig;
 import site.dunhanson.redisson.spring.boot.utils.RedissonUtils;
 
 /**
