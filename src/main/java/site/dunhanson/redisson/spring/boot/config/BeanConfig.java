@@ -22,7 +22,7 @@ public class BeanConfig {
 
     /**
      * RedissonClient初始化
-     * @return
+     * @return RedissonClient
      */
     @Bean
     public RedissonClient redissonClient() {

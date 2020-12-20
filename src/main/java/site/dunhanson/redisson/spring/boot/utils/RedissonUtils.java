@@ -19,7 +19,7 @@ public class RedissonUtils {
     /**
      * 创建Config通过RedissonConfig
      * @param redissonConfig
-     * @return
+     * @return Config
      */
     public static Config createConfig(RedissonConfig redissonConfig) {
         Config config = new Config();
