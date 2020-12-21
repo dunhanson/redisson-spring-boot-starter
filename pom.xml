@@ -11,7 +11,7 @@
     <groupId>site.dunhanson</groupId>
     <artifactId>redisson-spring-boot-starter</artifactId>
     <version>1.0.0</version>
-    <name>${project.groupId}:${project.artifactId}</name>
+    <name>redisson-spring-boot-starter</name>
     <description>redisson spring boot starter</description>
     <url>https://github.com/dunhanson/redisson-spring-boot-starter</url>
     <licenses>

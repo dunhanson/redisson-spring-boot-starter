@@ -6,6 +6,18 @@ spring boot中开箱即用redisson
 
 ## 使用方法
 
+maven依赖（暂未上传中央仓库）
+
+```xml
+<dependency>
+  <groupId>site.dunhanson</groupId>
+  <artifactId>redisson-spring-boot-starter</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
+SpringBootTest
+
 ```java
 @Slf4j
 @RunWith(SpringRunner.class)
