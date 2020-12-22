@@ -6,7 +6,7 @@ spring boot中开箱即用redisson
 
 ## 使用方法
 
-maven依赖（暂未上传中央仓库）
+maven依赖
 
 ```xml
 <dependency>
