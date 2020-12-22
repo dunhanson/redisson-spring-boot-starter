@@ -12,7 +12,7 @@ maven依赖
 <dependency>
   <groupId>site.dunhanson</groupId>
   <artifactId>redisson-spring-boot-starter</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0-alpha</version>
 </dependency>
 ```
 
